@@ -525,7 +525,7 @@ defmodule TransportWeb.API.Schemas do
           }
         })
 
-    def get_community_resource_prop() do
+    def get_community_resource_prop do
       [conversions: false]
       |> ResourceUtils.get_resource_prop()
       |> Map.put(:community_resource_publisher, %Schema{
@@ -630,6 +630,7 @@ defmodule TransportWeb.API.Schemas do
   end
 
   defmodule DatasetUtils do
+    @moduledoc false
     def get_dataset_prop(details: details) do
       # base resource comes in 2 flavors
       resource_type = if details == true, do: DetailedResource, else: SummarizedResource
